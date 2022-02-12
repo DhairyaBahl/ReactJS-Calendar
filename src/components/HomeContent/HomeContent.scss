@@ -1,0 +1,28 @@
+.home__content {
+    height: 90%;
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    .home__content--left {
+        width: 20%;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .home__content--right {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .home__content {
+        .home__content--left {
+            display: none;
+        }
+
+        .home__content--right {
+            width: 100%;
+        }
+    }
+}

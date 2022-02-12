@@ -1,0 +1,89 @@
+.createEvent__modal {
+    height: 70vh;
+    width: 30vw;
+    background-color: white;
+
+    .createEvent__modal--header {
+        height: 7%;
+        width: 100%;
+        background-color: #dadce0;
+        display: flex;
+        justify-content: end;
+
+        .modalClose {
+            display: flex;
+            align-items: center;
+            font-size: 1.1em;
+            margin-right: 10px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+
+    .createEvent__modal--content {
+        width: 100%;
+        padding: 0px 20px;
+
+        .createEvent__modal--error {
+            width: 100%;
+            height: 2vh;
+            font-size: 15px;
+            background-color: white;
+            color: #e50914;
+            display: flex;
+            font-weight: 400;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+            border-radius: 10px;
+        }
+
+        .showError {
+            margin-top: 2vh;
+            height: 7vh;
+            background-color: rgba(218,50,50,.3137254901960784);
+        }
+
+        .createEvent__modal--content--inputTitle {
+            width: 100%;
+            height: 30px;
+            font-size: 16px;
+            margin-top: 2vh;
+            border: none;
+            outline: none;
+            cursor: text;
+            border-bottom: 1px solid black;
+        }
+
+        .createEvent__modal--content--inputDate {
+            width: 100%;
+            margin-top: 2vh;
+        }
+
+        .createEvent__modal--content--inputTime {
+            width: 100%;
+            margin-top: 5vh;
+            height: 30px;
+        }
+
+        .createEvent__modal--content--save {
+            width: 50%;
+            padding: 7px;
+            margin: 3vh 0;
+            display: block;
+            outline: none;
+            background-color: #1a73e8;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .createEvent__modal {
+        width: 70%;
+    }
+}

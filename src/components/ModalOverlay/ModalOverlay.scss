@@ -1,0 +1,41 @@
+.modal__overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__overlay--mobile {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    .modal__overlay--content {
+        height: 100%;
+        width: 40%;
+        padding: 30px 10px;
+        background-color: white;
+
+        .modal__overlay--heading {
+            display: flex;
+            justify-content: end;
+            margin-bottom: 5vh;
+
+            .closeModal {
+                cursor: pointer;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {}

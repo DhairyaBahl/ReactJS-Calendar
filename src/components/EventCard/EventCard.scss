@@ -1,0 +1,16 @@
+.event__card--container {
+
+    position: relative;
+    margin-right: 5px;
+
+    .event__card {
+        cursor: pointer;
+        padding: 5px;
+    
+        .event__card--heading {
+            font-size: 1em;
+            margin-bottom: 1vh;
+            font-weight: 500;
+        }
+    }
+}
