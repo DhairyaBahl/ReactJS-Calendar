@@ -1,5 +1,5 @@
 .createEvent__modal {
-    height: 70vh;
+    // height: 70vh;
     width: 30vw;
     background-color: white;
 
@@ -66,13 +66,36 @@
             height: 30px;
         }
 
+        .createEvent__modal--content--inputDescription {
+            width: 100%;
+            margin-top: 5vh;
+            height: 15vh;
+            resize: none;
+            outline: none;
+            border: 1px solid #e4e4e4;
+        }
+
         .createEvent__modal--content--save {
-            width: 50%;
+            width: 100%;
             padding: 7px;
             margin: 3vh 0;
             display: block;
             outline: none;
             background-color: #1a73e8;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        .createEvent__modal--content--delete {
+            width: 100%;
+            padding: 7px;
+            margin: 3vh 0;
+            display: block;
+            outline: none;
+            background-color: #e50914;
             color: white;
             font-size: 16px;
             font-weight: 500;

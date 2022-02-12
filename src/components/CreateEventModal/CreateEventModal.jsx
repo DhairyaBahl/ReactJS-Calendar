@@ -11,6 +11,7 @@ export default function CreateEventModal(props) {
 
     const [error, setError] = useState("");
     const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
     const [calendarValue, setCalendarValue] = useState(new Date().toISOString().split('T')[0]);
     const [time, setTime] = useState([
         new Date().getHours() <= 9 ? '0' + new Date().getHours() : new Date().getHours(),
@@ -19,18 +20,20 @@ export default function CreateEventModal(props) {
 
     const [isLoading, setIsLoading] = useState(false);
     const [newEventCreated, setNewEventCreated] = useState(false);
-
     const dataContext = useContext(DataContext);
-    console.log(dataContext)
 
     function validateAndCreateNewEvent() {
         if (title.length < 1) {
             return setError("Title is required");
         }
 
+        if(description.length < 1) {
+            return setError("Description is required");
+        }
+
         setError("");
         setIsLoading(true);
-        const newEvent = createNewEvent({title, date: calendarValue, time});
+        const newEvent = createNewEvent({title, date: calendarValue, time, description});
         dataContext?.updateDataFromLocalStorage();
 
         const timeoutId = setTimeout(() => {
@@ -74,6 +77,12 @@ export default function CreateEventModal(props) {
                     type='time'
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
+                />
+                <textarea
+                    value = {description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    className='createEvent__modal--content--inputDescription'
+                    placeholder='Enter Description'
                 />
                 <button
                     className='createEvent__modal--content--save'

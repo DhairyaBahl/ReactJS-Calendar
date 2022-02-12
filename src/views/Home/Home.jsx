@@ -7,7 +7,7 @@ import ModalOverlay from '../../components/ModalOverlay/ModalOverlay';
 
 export default function Home() {
 
-    const [showMobileMenu, setShowMobileMenu] = useState(true);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
     const [calendarValue, setCalendarValue] = useState(new Date().toISOString().split('T')[0]);
     const [isEventModalOpen, setIsEventModalOpen] = useState(false);
 

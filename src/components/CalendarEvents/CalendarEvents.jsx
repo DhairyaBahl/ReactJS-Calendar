@@ -8,7 +8,7 @@ import getAllTimings from '../../controllers/getAllTimings';
 export default function CalendarEvents (props) {
     const dataForCurrentDate = useContext(DataContext).data[new Date(props.currentDate).toISOString().split('T')[0]];
     const showDate = new Date(props.currentDate).toDateString();
-    
+
     const times = getAllTimings();
 
     return (
@@ -23,7 +23,11 @@ export default function CalendarEvents (props) {
                             <div className='calendar__events--list--item__time'>{time}</div>
                             <div className="calendar__events--list--item__events">
                                 {dataForCurrentDate && dataForCurrentDate[dataTime] && dataForCurrentDate[dataTime].map((event) => {
-                                    return <EventCard event={event} key={event.id}/>
+                                    return <EventCard 
+                                                event={event} 
+                                                key={event.id}
+                                                setCurrentEventDetails={props.setCurrentEventDetails}
+                                            />
                                 })}
                             </div>
                         </div>

@@ -2,11 +2,20 @@ import './ModalOverlay.scss';
 import CreateEventModal from '../CreateEventModal/CreateEventModal';
 import CreateEvent from '../CreateEvent/CreateEvent';
 import Calendar from '../Calendar/Calendar';
+import ShowEventModal from '../ShowEventModal/ShowEventModal';
 
 export default function ModalOverlay(props) {
 
     function handleCloseModal() {
         props.setShowMobileMenu(false);
+    }
+
+    if(props.eventDetails) {
+        return (
+            <div className="modal__overlay">
+                <ShowEventModal {...props}/>
+            </div>
+        )
     }
 
     if(props.mobileModal)

@@ -7,6 +7,7 @@ import ModalOverlay from '../ModalOverlay/ModalOverlay';
 import CalendarEvents from '../CalendarEvents/CalendarEvents';
 
 export default function HomeContent(props) {
+    const [currentEventDetails, setCurrentEventDetails] = useState(null);
 
     return (
         <div className="home__content">
@@ -25,12 +26,21 @@ export default function HomeContent(props) {
             <div className="home__content--right">
                 <CalendarEvents
                     currentDate = {props.calendarValue}
+                    setCurrentEventDetails={setCurrentEventDetails}
                 />
             </div>
             {props.isEventModalOpen && 
                 <ModalOverlay
                     isEventModalOpen={props.isEventModalOpen}
                     setIsEventModalOpen={props.setIsEventModalOpen}
+                />
+            }
+            {
+                currentEventDetails &&
+                <ModalOverlay
+                    setCurrentEventDetails={setCurrentEventDetails}
+                    currentEventDetails={currentEventDetails}
+                    eventDetails
                 />
             }
         </div>
