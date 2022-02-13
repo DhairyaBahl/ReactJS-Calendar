@@ -3,7 +3,7 @@ import './Calendar.scss'
 
 export default function Calendar(props) {
 
-    const disabled = props.disabled || false;
+    const disabled = props.disabled;
 
     return (
         <div className='calendar'>
@@ -12,8 +12,8 @@ export default function Calendar(props) {
                 className={`calendar--input ${props.className}`}
                 value={props.value}
                 disabled={disabled}
-                onChange={(event) => disabled && props.onChange(event.target.value)}
-                onKeyDown={(event) => disabled &&  event.preventDefault()}
+                onChange={(event) => !disabled && props.onChange(event.target.value)}
+                onKeyDown={(event) => !disabled && event.preventDefault()}
             />
         </div>
     )
