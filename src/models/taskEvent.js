@@ -7,7 +7,12 @@ function TaskEvent (eventDetails) {
         this[key] = eventDetails[key];
     }
 
+    const colors = [
+        '#FFD700', 'aqua', 'greenyellow', 'springgreen', 'salmon'
+    ]
+
     this.id = generateUniqueEventId();
+    this.bgColor = colors[Math.floor(Math.random() * colors.length)]
 }
 
 export default TaskEvent;

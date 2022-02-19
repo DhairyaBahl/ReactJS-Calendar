@@ -5,7 +5,9 @@ export default function CreateEvent(props) {
 
     function handleButtonClick () {
         props.setIsEventModalOpen(true);
-        props?.handleParentCloseModal();
+
+        if(props.handleParentCloseModal)
+            props?.handleParentCloseModal();
     }
 
     return (

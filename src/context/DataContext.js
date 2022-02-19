@@ -10,15 +10,24 @@ export const DataProvider = ({ children }) => {
     const [data, setData] = React.useState({});
 
     function updateDataFromLocalStorage() {
+        console.log('updating data from local storage');
         const data = localStorage.getItem("events");
 
         if(data) {
-            setData(JSON.parse(data));
+            const parsedData = JSON.parse(data);
+            setData(parsedData);
+            console.log('data updated from local storage');
+            return parsedData
         }
+        
+        console.log('data not updated from local storage');
+        return null;
     }
 
     useEffect(() => {
-        updateDataFromLocalStorage();
+        console.log("Fetching from local storage !")
+        const result = updateDataFromLocalStorage();
+        console.log("Fetching from local storage done !")
     }, [])
 
     return (

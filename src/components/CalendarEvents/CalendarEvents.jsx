@@ -1,5 +1,5 @@
 import './CalendarEvents.scss';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 
 import EventCard from '../EventCard/EventCard';
 import { DataContext } from '../../context/DataContext';
@@ -8,7 +8,7 @@ import getAllTimings from '../../controllers/getAllTimings';
 export default function CalendarEvents (props) {
     const dataForCurrentDate = useContext(DataContext).data[new Date(props.currentDate).toISOString().split('T')[0]];
     const showDate = new Date(props.currentDate).toDateString();
-
+    console.log(`data for ${showDate} is : `, dataForCurrentDate);
     const times = getAllTimings();
 
     return (
